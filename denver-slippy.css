@@ -1,0 +1,60 @@
+section {
+  width: 620px;
+  height: 476px;
+  margin-left: -310px;
+  margin-top: -238px;
+  position: absolute;
+  top: 50%;
+  left: -100%; }
+
+.overview section {
+  float: left;
+  position: relative;
+  top: auto !important;
+  left: auto !important;
+  margin: 2% !important;
+  -moz-transform: scale(0.2, 0.2);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(0.2, 0.2);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(0.2, 0.2);
+  -o-transform-origin: 0 0; }
+
+#conference-title {
+  background-image: url(background.png);
+  background-position: center bottom, left top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; }
+
+table {
+  width: 100%;
+  margin-top: 2em; }
+
+li {
+  margin-top: 1em; }
+
+li.axis-unimportant {
+  color: Red; }
+
+li.axis-important {
+  color: Green; }
+
+h2 {
+  text-align: center; }
+
+/*
+section.slide {
+  background-image: url('background-light.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+*/
+blockquote {
+  vertical-align: center;
+  text-align: center;
+  font-size: 40px;
+  quotes: '"' '"'; }
+  blockquote:before {
+    content: open-quote; }
+  blockquote:after {
+    content: close-quote; }

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Architectural Trade-offs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- jQuery + history plugin -->
+    <script type="text/javascript" src="src/jquery.min.js"></script>
+    <script type="text/javascript" src="src/jquery.history.js"></script>
+
+    <!-- Slippy core js file -->
+    <script type="text/javascript" src="src/slippy.js"></script>
+
+    <!-- Slippy structural styles -->
+    <link type="text/css" rel="stylesheet" href="src/slippy.css"/>
+
+    <!-- Slippy theme (feel free to change it) -->
+    <link type="text/css" rel="stylesheet" href="src/slippy-pure.css"/>
+
+    <!-- Specific styles for this presentation -->
+    <link type="text/css" rel="stylesheet" href="denver-slippy.css"/>
+
+    <!-- Syntax highlighting core file  -->
+    <script type="text/javascript" src="src/highlighter/shCore.js"></script>
+
+    <!-- Syntax highlighting brushes, this one is only for javascript -->
+    <script type="text/javascript" src="src/highlighter/shBrushJScript.js"></script>
+
+    <!-- Syntax highlighting core CSS and a theme -->
+    <link type="text/css" rel="stylesheet" href="src/highlighter/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="src/highlighter/shThemeEclipse.css"/>
+
+    <script type="text/javascript">
+      $(function() {
+          $(".slide").slippy({
+            animLen: 0
+          });
+          SyntaxHighlighter.all();
+      });
+    </script>
+
+  </head>
+  <body>
+<section class="slide" id="conference-title">
+  <img src="first-slide.png" />
+</section>
+
+<section class="slide" id="session-title">
+  <div class="vcenter">
+    <h2>Architectural Trade-offs</h2>
+    <h3>by Larry Garfield</h3>
+  </div>
+</section>
+
+<section class="slide">
+  <p>About Larry</p>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">But first, the obligatory car analogy...</h1>
+</section>
+
+<section class="slide" data-background="1964-corvair-monza.jpg">
+
+</section>
+
+<section class="slide">
+  <h1>Swing axle design</h1>
+  <img class="vcenter" src="swing-axle-diagram.svg" alt="Swing Axle design" />
+</section>
+
+<section class="slide">
+  <img style="float: left;" src="Unsafeatanyspeedcover.jpg" alt="Unsafe at any speed" />
+  <img style="float: right;" src="400px-Ralph-Nader-1975.jpg" alt="Ralph Nader" />
+<!--  <img style="float: right;" src="749px-Ralph-Nader-2008.jpg" alt="Ralph Nader" />-->
+</section>
+
+<section class="slide">
+  <h1>Everything is balance</h1>
+  <img src="scale.jpg" data-credit="http://www.flickr.com/photos/61056899@N06/5751301741/" />
+</section>
+
+<section class="slide">
+  <p>*Picture of angel and devil*</p>
+</section>
+
+<section class="slide">
+  <h2>In an ideal world...</h2>
+  <ul>
+    <li class="incremental">Fast</li>
+    <li class="incremental">Flexible</li>
+    <li class="incremental">Readable</li>
+    <li class="incremental">Infinitely scalable</li>
+    <li class="incremental">Perfectly correct</li>
+    <li class="incremental"><code class="php">include('pony.php');</code></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>You can't always get what you want</h1>
+  <img src="rolling-stones.jpg" data-credit="http://en.wikipedia.org/wiki/File:Rolling_stones_-_11_luglio_2006_-_san_siro.jpg" />
+</section>
+
+<section class="slide">
+  <h1>Obligatory Venn Diagram</h1>
+  <h2 style="text-align: center;">Pick two</h2>
+  <div style="text-align: center"><img src="project-triangle.svg" /></div>
+</section>
+
+<section class="slide">
+  <h1>Project Management Triad</h1>
+  <div style="text-align: center"><img src="triad_constraints.jpg" /></div>
+</section>
+
+<section class="slide">
+  <blockquote class="vcenter">I want my code/site to be good!</blockquote>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">There is no such thing as good.<br />There is only appropriate.</h1>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">Good is context-sensitive</h1>
+</section>
+
+<section class="slide">
+  <h2>Good in software</h2>
+  <ul class="vcenter">
+    <li>Engineering axes</li>
+    <li>Human axes</li>
+    <li>QA axes</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Engineering axes</h2>
+  <ul class="vcenter">
+    <li class="incremental">Fast to run</li>
+    <li class="incremental">Scalable</li>
+    <li class="incremental">Low-memory</li>
+    <li class="incremental">Modifiability</li>
+    <li class="incremental">Extensibility</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Human axes</h2>
+  <ul class="vcenter">
+    <li class="incremental">Usability / UX (for end user)</li>
+    <li class="incremental">Learnability</li>
+    <li class="incremental">Understandability / DX (for developer)</li>
+    <li class="incremental">Expediency</li>
+    <li class="incremental">Maintainability</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>QA axes</h2>
+  <ul class="vcenter">
+    <li class="incremental">Testability</li>
+    <li class="incremental">Verifiability</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <blockquote class="vcenter">zOMG who cares about this academic crap?</blockquote>
+</section>
+
+<section class="slide">
+  <h2>zOMG who cares about this academic crap?</h2>
+  <ul class="vcenter">
+    <li class="incremental">Your client</li>
+    <li class="incremental">Your boss</li>
+    <li class="incremental">You in 6 months</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="vcenter">
+    <h1>Software architecture is good if it is good in the ways that matter in this case.</h1>
+    <br />
+    <h2 style="text-align: center">What matters depends on the situation.</h2>
+  </div>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">Drupal site considerations</h1>
+</section>
+
+<section class="slide">
+  <h1>Is this site for...</h1>
+
+  <div style="float: left;">
+    <h2>A small church</h2>
+    <ul>
+      <li>Low-traffic</li>
+      <li>Anonymous traffic</li>
+      <li>Dozens of pages</li>
+      <li>Mostly static content</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Learnability</li>
+      <li class="axis-important">Expediency</li>
+      <li class="axis-important">Low-memory</li>
+      <li class="axis-unimportant">Scalability</li>
+      <li class="axis-unimportant">Verifiability</li>
+    </ul>
+  </div>
+
+  <div style="float: right;">
+    <h2>A major media network</h2>
+    <ul>
+      <li>Hundreds of hits / second</li>
+      <li>Lots of social networking features</li>
+      <li>Millions of pages</li>
+      <li>Constantly changing content</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Scalability</li>
+      <li class="axis-important">Fast-to-run</li>
+      <li class="axis-important">Verifiability</li>
+      <li class="axis-unimportant">Expediency</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>Is this site going to be mostly...</h1>
+
+  <div style="float: left;">
+    <h2>Anonymous</h2>
+    <ul>
+      <li>Varnish solves <del>all</del> most</li>
+      <li>Simpler caching strategy</li>
+      <li>Rarely reach Drupal</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-unimportant">Fast-to-run</li>
+      <li class="axis-unimportant">Low-memory</li>
+      <li class="axis-unimportant">Scalability</li>
+    </ul>
+  </div>
+
+  <div style="float: right;">
+    <h2>Authenticated</h2>
+    <ul>
+      <li>Varnish is no help</li>
+      <li>Complex caching strategy</li>
+      <li>Every line of PHP matters</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Fast-to-run</li>
+      <li class="axis-important">Low-memory</li>
+      <li class="axis-important">Scalability</li>
+      <li class="axis-unimportant">Expediency</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>To what extent do I care about mobile? (0 is not an answer)</h2>
+  <table>
+    <thead><tr><th></th> <th></th></tr></thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            <li></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <h1>Is this module...</h1>
+
+  <div style="float: left; width: 50%">
+    <h2>Site-specific</h2>
+    <ul>
+      <li>No integration needs</li>
+      <li>Limited extensibility</li>
+      <li>Hard coding is OK!</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Expediency</li>
+      <li class="axis-important">Modifiability</li>
+      <li class="axis-unimportant">Usability</li>
+      <li class="axis-unimportant">Extensibility</li>
+    </ul>
+  </div>
+
+  <div style="float: right; width: 50%">
+    <h2>For Drupal.org</h2>
+    <ul>
+      <li>Leverage Views/Rules/Panels?</li>
+      <li>Assume extensibility</li>
+      <li>Avoid hard-coding</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Extensibility</li>
+      <li class="axis-important">Scalability</li>
+      <li class="axis-important">Testability</li>
+      <li class="axis-important">Understandability</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>Does this site have...</h1>
+
+  <div style="float: left; width: 50%">
+    <h2>One content editor</h2>
+    <ul>
+      <li>No workflow</li>
+      <li>Train once, use anywhere</li>
+      <li>All admin access</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Usability</li>
+      <li class="axis-important">Expediency</li>
+      <li class="axis-unimportant">Learnability</li>
+    </ul>
+  </div>
+
+  <div style="float: right; width: 50%">
+    <h2>Several editors</h2>
+    <ul>
+      <li>Workflow/ACL</li>
+      <li>Customized editorial process</li>
+      <li>Unpublished nodes?</li>
+    </ul>
+    <ul style="margin-top: 3em;">
+      <li class="axis-important">Extensibility</li>
+      <li class="axis-important">Modifiability</li>
+      <li class="axis-important">Testability</li>
+      <li class="axis-important">Understandability</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Drupal considerations</h2>
+  <ul>
+    <li class="incremental">Do I want this behavior to be overridable by any module?  <em>(Note: The answer is not always yes!)</em></li>
+    <li class="incremental">Do I want this behavior to be overridable by a specific site?  <em>(Note: The answer is not always yes!)</em></li>
+    <li class="incremental">Do I care if this operation is fast? <em>(Note: The answer is not always yes!)</em></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>You can't have your cake and eat it too</h1>
+  <div style="text-align: center"><img src="project-triangle.svg" /></div>
+</section>
+
+<section class="slide">
+  <h2>You can't have your cake and eat it too</h2>
+  <ul>
+    <li class="incremental">Modifiability vs. Performance. Cost of abstraction</li>
+    <li class="incremental">Expediency vs. Modifiability: "Doing it right" takes time</li>
+    <li class="incremental">Extensibility vs. Testability: Hooks & bare data structures</li>
+    <li class="incremental">Extensibility vs. Understandability: "Wait, what all is happening?" (preprocess?)</li>
+    <li class="incremental">Verifiability vs. Expediency: Go learn Erlang or Haskel</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>You can't have your cake and eat it too</h2>
+  <h1 class="slide">... Or can you?</h1>
+</section>
+
+<section class="slide">
+  <h2>Cupcakes</h2>
+  <ul>
+    <li class="incremental">Testability and Modifiability both require similar abstraction</li>
+    <li class="incremental">A well-designed system is rapidly extensible. Expedient later, not now.</li>
+    <li class="incremental">Testable code is inherently modular</li>
+    <li class="incremental">The easiest way to make something extensible is to make it modular</li>
+  </ul>
+</section>
+
+
+  </body>
+</html>
