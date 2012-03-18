@@ -20,11 +20,14 @@ section {
   -o-transform: scale(0.2, 0.2);
   -o-transform-origin: 0 0; }
 
-#conference-title {
+#conference-title, #feedback {
   background-image: url(background.png);
   background-position: center bottom, left top;
   background-repeat: no-repeat;
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+  color: White; }
+  #conference-title a, #feedback a {
+    color: White; }
 
 table {
   width: 100%;
