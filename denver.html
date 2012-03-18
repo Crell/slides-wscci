@@ -81,7 +81,9 @@
 </section>
 
 <section class="slide">
-  <p>*Picture of angel and devil*</p>
+  <div class="vcenter" style="text-align: center;">
+    <img src="homer_simpson_angel_devil.jpg" data-credit="http://www.comicvine.com/homers-conscience/29-43468/oohsubliminal-conflict/108-6390/112808_86953_homer_simpson_super/105-711130/" />
+  </div>
 </section>
 
 <section class="slide">
@@ -125,8 +127,8 @@
 </section>
 
 <section class="slide">
-  <h2>Good in software</h2>
-  <ul class="vcenter">
+  <h1>Good in software</h1>
+  <ul>
     <li>Engineering axes</li>
     <li>Human axes</li>
     <li>QA axes</li>
@@ -134,19 +136,19 @@
 </section>
 
 <section class="slide">
-  <h2>Engineering axes</h2>
-  <ul class="vcenter">
+  <h1>Engineering axes</h1>
+  <ul>
     <li class="incremental">Fast to run</li>
-    <li class="incremental">Scalable</li>
     <li class="incremental">Low-memory</li>
+    <li class="incremental">Scalable</li>
     <li class="incremental">Modifiability</li>
     <li class="incremental">Extensibility</li>
   </ul>
 </section>
 
 <section class="slide">
-  <h2>Human axes</h2>
-  <ul class="vcenter">
+  <h1>Human axes</h1>
+  <ul>
     <li class="incremental">Usability / UX (for end user)</li>
     <li class="incremental">Learnability</li>
     <li class="incremental">Understandability / DX (for developer)</li>
@@ -156,8 +158,8 @@
 </section>
 
 <section class="slide">
-  <h2>QA axes</h2>
-  <ul class="vcenter">
+  <h1>QA axes</h1>
+  <ul>
     <li class="incremental">Testability</li>
     <li class="incremental">Verifiability</li>
   </ul>
@@ -168,8 +170,8 @@
 </section>
 
 <section class="slide">
-  <h2>zOMG who cares about this academic crap?</h2>
-  <ul class="vcenter">
+  <h1>zOMG who cares about this academic crap?</h1>
+  <ul>
     <li class="incremental">Your client</li>
     <li class="incremental">Your boss</li>
     <li class="incremental">You in 6 months</li>
@@ -259,24 +261,18 @@
 </section>
 
 <section class="slide">
-  <h2>To what extent do I care about mobile? (0 is not an answer)</h2>
-  <table>
-    <thead><tr><th></th> <th></th></tr></thead>
-    <tbody>
-      <tr>
-        <td>
-          <ul>
-            <li></li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li></li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <h2>To what extent do I care about mobile?<br />(0 is not an answer)</h2>
+
+  <ul>
+    <li>Responsive design limits what you can put on a page</li>
+    <li>Responsive design takes more work</li>
+  </ul>
+
+  <ul style="margin-top: 3em;">
+    <li>Look at browser stats</li>
+    <li>Look at <em>your site's</em> traffic logs</li>
+  </ul>
+
 </section>
 
 <section class="slide">
@@ -347,11 +343,11 @@
 </section>
 
 <section class="slide">
-  <h2>Drupal considerations</h2>
+  <h1>Drupal considerations</h1>
   <ul>
-    <li class="incremental">Do I want this behavior to be overridable by any module?  <em>(Note: The answer is not always yes!)</em></li>
-    <li class="incremental">Do I want this behavior to be overridable by a specific site?  <em>(Note: The answer is not always yes!)</em></li>
-    <li class="incremental">Do I care if this operation is fast? <em>(Note: The answer is not always yes!)</em></li>
+    <li class="incremental">Do I want this behavior to be overridable by any module?<br /><em>(Note: The answer is not always yes!)</em></li>
+    <li class="incremental">Do I want this behavior to be overridable by a specific site?<br /><em>(Note: The answer is not always yes!)</em></li>
+    <li class="incremental">Do I care if this operation is fast?<br /><em>(Note: The answer is not always yes!)</em></li>
   </ul>
 </section>
 
@@ -361,7 +357,7 @@
 </section>
 
 <section class="slide">
-  <h2>You can't have your cake and eat it too</h2>
+  <h1>You can't have your cake and eat it too</h1>
   <ul>
     <li class="incremental">Modifiability vs. Performance. Cost of abstraction</li>
     <li class="incremental">Expediency vs. Modifiability: "Doing it right" takes time</li>
@@ -372,19 +368,45 @@
 </section>
 
 <section class="slide">
-  <h2>You can't have your cake and eat it too</h2>
-  <h1 class="slide">... Or can you?</h1>
+  <h1>You can't have your cake and eat it too</h1>
+  <h1 class="vcenter">... Or can you?</h1>
 </section>
 
 <section class="slide">
-  <h2>Cupcakes</h2>
+  <h1>Complementary design</h1>
   <ul>
     <li class="incremental">Testability and Modifiability both require similar abstraction</li>
-    <li class="incremental">A well-designed system is rapidly extensible. Expedient later, not now.</li>
     <li class="incremental">Testable code is inherently modular</li>
     <li class="incremental">The easiest way to make something extensible is to make it modular</li>
+    <li class="incremental">A well-designed system is rapidly extensible. Expedient later, not now.</li>
   </ul>
+
+  <h1 class="incremental vcenter">Testability and Modifiability are complementary</h1>
 </section>
+
+<section class="slide">
+  <h1>Complementary design</h1>
+  <ul>
+    <li class="incremental">Performance: seconds / request</li>
+    <li class="incremental">Scalability: requests / second</li>
+    <li class="incremental">Fewer seconds/request => more requests/second</li>
+  </ul>
+
+  <h1 class="incremental vcenter">Better Performance <em>usually</em> improves Scalability</h1>
+</section>
+
+<section class="slide">
+  <h1>What did you think?</h1>
+
+  <h2 style="margin-top: 3em;">Locate this session on the DrupalCon Denver website</h2>
+
+  <h2 style="margin-top: 3em;"><a href="http://denver2012.drupal.org/program/sessions/flexible-fast-friendly-balancing-your-architecture">http://denver2012.drupal.org/program/sessions</a></h2>
+
+  <h2 style="margin-top: 3em;">Click the “Take the Survey” link.</h2>
+
+  <h1 style="margin-top: 3em;">Thank you</h1>
+</section>
+
 
 
   </body>
