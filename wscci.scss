@@ -29,6 +29,12 @@ section {
   background-size: 100% 100%;
 }
 
+img {
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+}
+
 table {
   width: 100%;
   margin-top: 2em;
@@ -71,4 +77,33 @@ blockquote {
   &:after {
     content: close-quote;
   }
+}
+
+table.visible {
+  width: 100%;
+  border: 2px solid black;
+
+  td, th {
+    padding: 3px;
+    border: 1px solid #666;
+  }
+}
+
+.team-table {
+  white-space: nowrap;
+  td {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  img {
+    float: left;
+    width: 40%;
+    margin: 0px;
+  }
+}
+
+p {
+  margin-top: 1em;
+  font-size: 1.2em;
 }
