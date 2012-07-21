@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Services and Symfony Core Initiative</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- jQuery + history plugin -->
+    <script type="text/javascript" src="src/jquery.min.js"></script>
+    <script type="text/javascript" src="src/jquery.history.js"></script>
+
+    <!-- Slippy core js file -->
+    <script type="text/javascript" src="src/slippy.js"></script>
+
+    <!-- Slippy structural styles -->
+    <link type="text/css" rel="stylesheet" href="src/slippy.css"/>
+
+    <!-- Slippy theme (feel free to change it) -->
+    <link type="text/css" rel="stylesheet" href="src/slippy-pure.css"/>
+
+    <!-- Specific styles for this presentation -->
+    <link type="text/css" rel="stylesheet" href="wscci.css"/>
+
+    <!-- Syntax highlighting core file  -->
+    <script type="text/javascript" src="src/highlighter/shCore.js"></script>
+    <script type="text/javascript" src="src/highlighter/shBrushPhp.js"></script>
+
+    <!-- Syntax highlighting brushes, this one is only for javascript -->
+    <script type="text/javascript" src="src/highlighter/shBrushJScript.js"></script>
+
+    <!-- Syntax highlighting core CSS and a theme -->
+    <link type="text/css" rel="stylesheet" href="src/highlighter/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="src/highlighter/shThemeEclipse.css"/>
+
+    <script type="text/javascript">
+      $(function() {
+          $(".slide").slippy({
+            //animLen: 0,
+            margin: 0.05
+          });
+          SyntaxHighlighter.all();
+      });
+    </script>
+
+  </head>
+  <body>
+
+<section class="slide" id="session-title">
+  <div class="vcenter">
+    <h1>Web Services and <strike>Context</strike> Symfony<br/>Core Initiative</h1>
+    <h2>by Larry Garfield</h2>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>@Crell</h1>
+  <div style="width: 50%; float: right; ">
+    <img style="max-width: 100%; height: auto;" src="crell-nerf.jpg" />
+  </div>
+
+  <ul>
+    <li>Senior Architect, Palantir.net</li>
+    <li>Drupal Association Advisor</li>
+    <li>Web Services & Context Initiative Owner</li>
+    <li>Co-Author,<br /><em>Drupal 7 Module Development</em>,<br />Packt Publishing</li>
+    <li>Architectural Gadfly</li>
+    <li>Nerf Gunslinger</li>
+  </ul>
+
+  <img style="margin-top: 2em;" src="palantir_horiz_trans.png" />
+</section>
+
+<section class="slide">
+  <h1>What we do</h1>
+  <img style="position: absolute; top: 30px; left: -100px;" src="sites/barnard-1.jpg" />
+  <img style="position: absolute; top: 60px; left: -70px;" class="incremental" src="sites/foreign-affairs-1.jpg" />
+  <img style="position: absolute; top: 90px; left: -40px;" class="incremental" src="sites/fieldmuseum-1.jpg" />
+  <img style="position: absolute; top: 120px; left: -10px;" class="incremental" src="sites/opensource-1.jpg" />
+  <img style="position: absolute; top: 150px; left: 20px;" class="incremental" src="sites/marketplace-1.jpg" />
+</section>
+
+
+<section class="slide">
+  <h1>Web Services and Context Core Initiative (WSCCI)</h1>
+  <div class="vcenter" style="text-align: center; height: 70%"><img src="jack_daniels.jpg" alt="WSCCI" data-credit="http://www.flickr.com/photos/spaterson/4995021726/" /></div>
+</section>
+
+<section class="slide">
+  <h1>The original plan...</h1>
+  <blockquote class="vcenter">The Web Services and Context Core Initiative (WSCCI) aims to
+    transform Drupal from a first-class CMS to a first-class REST server with a
+    first-class CMS on top of it. To do that, we must give Drupal a unified,
+    powerful context system that will support smarter, context- sensitive,
+    easily cacheable block-centric layouts and non-page responses using a
+    robust unified plugin mechanism.</blockquote>
+</section>
+
+<section class="slide">
+  <h1>The original plan...</h1>
+  <blockquote class="vcenter" style="color: #777">The Web Services and Context Core Initiative (WSCCI) aims to
+    transform Drupal from a first-class CMS to a first-class REST server with a
+    first-class CMS on top of it. To do that, we must give Drupal a <strong style="color: #000" class="incremental">unified,
+    powerful context system</strong> that will support smarter, context- sensitive,
+    easily cacheable <strong style="color: #000" class="incremental">block-centric layouts</strong> and
+    <strong style="color: #000" class="incremental">non-page responses</strong> using a
+    robust <strong style="color: #000" class="incremental">unified plugin mechanism</strong>.</blockquote>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">Huh?</h1>
+</section>
+
+<section class="slide">
+  <div class="vcenter">
+    <h1>REST-First</h1>
+    <h1>Development</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>REpresentational State Transfer</h1>
+  <ul>
+    <li class="incremental">HTTP is your API (verbs, URIs, caching)</li>
+    <li class="incremental">Client-server architecture</li>
+    <li class="incremental">Very loosely coupled</li>
+    <li class="incremental">Stateless</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Blocks in Drupal 7</h1>
+  <div style="text-align: center;"><img src="blocks-drupal-7.svg" alt="Blocks in Drupal 7" /></div>
+</section>
+
+<section class="slide">
+  <h1>Drupal 7 page flow</h1>
+  <div class="vcenter" style="text-align: center;"><img src="request-flow-drupal-7.svg" alt="Page request flow in Drupal 7" /></div>
+</section>
+
+<section class="slide">
+  <h1>Blocks/Requests in Drupal 8</h1>
+  <div style="text-align: center;"><img src="blocks-drupal-8.svg" alt="Blocks in Drupal 8" /></div>
+</section>
+<section class="slide">
+  <div class="vcenter" style="text-align: center;"><img src="symfony2-logo.png" alt="Symfony2" /></div>
+</section>
+
+<section class="slide">
+  <h1>Where did Symfony2 come from?</h1>
+  <ul>
+    <li class="incremental">Just wanted a request/response library</li>
+    <li class="incremental">Symfony2 vs. Zend: Symfony2</li>
+    <li class="incremental">Oh, wait, they did this already...</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>What is Symfony2?</h1>
+  <div class="vcenter">
+    <div class="incremental" style="float: left">
+      <h2>Symfony2 Components</h2>
+      <ul>
+        <li>Reusable set of stand-alone libraries</li>
+        <li>Solid Object-Oriented toolset</li>
+      </ul>
+    </div>
+    <div class="incremental" style="float: left">
+      <h2>Symfony2 Framework</h2>
+      <ul>
+        <li>Application framework</li>
+        <li>Build on top of the Components</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>So what are we using?</h1>
+  <img src="symfony2-components.png" />
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">HttpFoundation</h1>
+</section>
+
+<section class="slide">
+  <h1>HttpFoundation</h1>
+  <div class="incremental" style="float: left">
+    <h2>Request</h2>
+    <ul>
+      <li>HTTP command</li>
+      <li>Self-contained action</li>
+      <li>Lots of "headers" for metadata</li>
+    </ul>
+    <pre class="incremental" style="margin-top: 3em; color: green;">
+    GET /foo/bar.html HTTP/1.1
+    Host: example.com
+    Accept: text/html
+    ...
+    </pre>
+  </div>
+  <div class="incremental" style="float: left">
+    <h2>Response</h2>
+    <ul>
+      <li>HTTP result</li>
+      <li>Self-contained payload</li>
+      <li>Lots of "headers for metadata</li>
+    </ul>
+    <pre class="incremental" style="margin-top: 3em; color: green;">
+    HTTP/1.1 200 OK
+    Date: Fri, 18 May 2012 08:08:08 GMT
+    Content-Length: 14
+    Content-Type: text/html
+
+    Hello World!
+    </pre>
+  </div>
+
+  <div style="clear: all">
+  </div>
+</section>
+
+<section class="slide">
+  <h1>PHP's request API</h1>
+  <pre class="brush: php">
+  session_start();
+
+  $name = $_GET['name'];
+
+  echo $_SESSION['name'];
+
+  $method = $_SERVER['REQUEST_METHOD'];
+
+  $client_ip = $_SERVER['REMOTE_ADDR'];
+  </pre>
+
+  <div class="incremental">
+    <pre class="brush: php">
+    if ($trust_proxy) {
+      if (isset($_SERVER['HTTP_CLIENT_IP'])) {
+        return $_SERVER['HTTP_CLIENT_IP'];
+      }
+      if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'], 2);
+        return isset($ips[0]) ? trim($ips[0]) : '';
+      }
+    }
+    return $_SERVER['REMOTE_ADDR'];
+    </pre>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>PHP's request API</h1>
+  <ul>
+    <li class="incremental">Singletons</li>
+    <li class="incremental">Not testable</li>
+    <li class="incremental">Minimal abstraction</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Symfony2's request API</h1>
+  <div class="vcenter">
+    <pre class="brush: php">
+      use Symfony\Component\HttpFoundation\Request;
+
+      $request = Request::createFromGlobals();
+
+      $request = Request::create('/hello.html', 'GET');
+      $request->overrideGlobals();
+
+      $request->query->get('name', 'Default');
+      $request->getSession()->get('name');
+      $request->getPathInfo();
+      $request->getClientIp();
+      Request::trustProxyData();
+    </pre>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>PHP's response API</h1>
+  <div class="vcenter">
+    <pre class="brush: php">
+    header('HTTP/1.0 404 Not Found');
+    header('Content-Type: text/html; charset=UTF-8');
+
+    setcookie('name', $name);
+    $_SESSION['name'] = 'Larry';
+
+    echo 'Hello ' . $name;
+    </pre>
+   </div>
+</section>
+
+<section class="slide">
+  <h1>PHP's response API</h1>
+  <ul>
+    <li class="incremental">Singletons</li>
+    <li class="incremental">Not testable</li>
+    <li class="incremental">No CLI support</li>
+    <li class="incremental">Order issues (header vs. print)</li>
+    <li class="incremental">Minimal abstraction</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Symfony2's response API</h1>
+  <pre class="brush: php">
+  use Symfony\Component\HttpFoundation\Response;
+
+  $response = new Response('No page. :-(', 404, array(
+    'Content-Type' => 'text/plain',
+  ));
+
+  $response = new Response();
+  $response->setContent('Hello World');
+  $response->send();
+  </pre>
+  <div class="incremental">
+    <pre class="brush: php">
+    use Symfony\Component\HttpFoundation\StreamedResponse;
+
+    $response = new StreamedResponse(function () {
+      echo 'foo';
+      flush();
+      echo 'bar';
+    });
+
+    // Later
+    $response->send();
+
+    </pre>
+  </div>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">EventDispatcher</h1>
+</section>
+
+<section class="slide">
+  <h1>EventDispatcher</h1>
+  <p>Like hooks, but</p>
+  <ul>
+    <li class="incremental">Object-oriented</li>
+    <li class="incremental">Testable</li>
+    <li class="incremental">More self-evident</li>
+    <li class="incremental">Groupable</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>EventDispatcher</h1>
+  <pre class="brush: php">
+  use Symfony\Component\EventDispatcher\EventDispatcher;
+
+  $dispatcher = new EventDispatcher();
+
+  // Somewhere...
+  $callable = function (Event $event) {
+    // do something
+  };
+  $dispatcher->addListener('event_name', $callable);
+
+  // Equivalent of module_invoke_all().
+  $dispatcher->dispatch('event_name', new Event());
+  </pre>
+  <div class="incremental">
+    <pre class="brush: php">
+    class PlusOneSubscribe implements EventSubscriberInterface {
+
+      public function onMyEvent(Event $event) {
+        // Do stuff
+      }
+
+      static function getSubscribedEvents() {
+        $events['event_name'][] = array('onMyEvent');
+        return $events;
+      }
+    }
+
+    $dispatcher->addSubscriber(new PlusOneSubscribe());
+    </pre>
+   </div>
+</section>
+
+<section class="slide">
+  <div class="vcenter">
+    <h1>HttpKernel</h1>
+    <h1 style="margin-top: 2em;">Routing</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>HttpKernel</h1>
+  <ul>
+    <li class="incremental">Ties everything together</li>
+    <li class="incremental">Map a Request to a Response</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>HttpKernelInterface</h1>
+  <div class="vcenter">
+    <pre class="brush: php">
+    namespace Symfony\Component\HttpKernel;
+
+    interface HttpKernelInterface {
+      /**
+       * Handles a request.
+       *
+       * @param Request $request
+       *   A request instance
+       * @return $response
+       *   A Response instance
+       */
+      function handle(Request $request, $type = self::MASTER_REQUEST, $catch = true);
+    }
+    </pre>
+   </div>
+</section>
+
+<section class="slide">
+  <h1>HttpKernel</h1>
+    <div class="vcenter" style="text-align: center;"><img src="kernel-flow.png" alt="Kernel workflow" data-credit="http://www.flickr.com/photos/spaterson/4995021726/" /></div>
+</section>
+
+<section class="slide">
+  <h1>index.php</h1>
+  <div class="vcenter">
+    <pre class="brush: php">
+    use Drupal\Core\DrupalKernel;
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\EventDispatcher\EventDispatcher;
+    use Symfony\Component\HttpKernel\Controller\ControllerResolver;
+
+    // Create a request object from the HTTPFoundation.
+    $request = Request::createFromGlobals();
+
+    $dispatcher = new EventDispatcher();
+    $resolver = new ControllerResolver();
+
+    $kernel = new DrupalKernel($dispatcher, $resolver);
+    $response = $kernel->handle($request);
+
+    $response->prepare($request);
+    $response->send();
+    $kernel->terminate($request, $response);
+    </pre>
+   </div>
+</section>
+
+<section class="slide">
+  <h1>Drupal 8 page flow (planned)</h1>
+  <div style="text-align: center;"><img src="request-flow-drupal-8.svg" alt="Request flow in Drupal 8" /></div>
+</section>
+
+<section class="slide">
+  <h1 class="vcenter">So what changes?</h1>
+</section>
+
+<section class="slide">
+  <h1>Controllers</h1>
+  <ul>
+    <li class="incremental">"Thing the kernel asks for a response."</li>
+    <li class="incremental">Page callback, only better!</li>
+    <li class="incremental">Block, only better!</li>
+    <li class="incremental">Controller == Page callback == Block =></li>
+    <li class="incremental"><em>Every block is (can be) a subreqest</em></li>
+    <li class="incremental">Every subrequest is HTTP cacheable</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Routing</h1>
+  <div>Route based on more than path: Method, content type, etc.</div>
+
+  <table class="visible" style="width: 100%; border: 1px solid black;">
+    <thead>
+      <tr><th>Method</th> <th>Path</th> <th>Accept header</th> <th>Result</th></tr>
+    </thead>
+    <tbody>
+      <tr class="incremental"><td>GET</td> <td>node/1</td> <td>text/html</td> <td class="incremental"><strong>Node view page</strong></td></tr>
+      <tr class="incremental"><td>GET</td> <td>node/1</td> <td>application/json</td> <td class="incremental"><strong>JSON-LD record</strong></td></tr>
+      <tr class="incremental"><td>POST</td> <td>system/form/node_edit</td> <td>text/html</td> <td class="incremental"><strong>Submit a node form and redirect</strong></td></tr>
+      <tr class="incremental"><td>PUT</td> <td>node/1</td> <td>application/json</td> <td class="incremental"><strong>Overwrite the node exactly</strong></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <h1>Routing</h1>
+  <p>New routing syntax (farewell <code>hook_menu()</code>?)</p>
+  <div class="alert" style="text-align: center; margin-top: 1em; font-size: 1.2em;"><em>Warning, early untested prototype</em></div>
+
+  <pre class="brush: php">
+    function example_route_info() {
+      $routes['node_page'] = array(
+        'route' => new Route('/node/{node}', array(
+          '_controller' => 'NodeController:show',
+        )),
+        // This gets objectified later...
+        'access' => array(
+          'callback' => array('function' => 'node_access'),
+          'arguments' => array('view'),
+        ),
+      );
+      return $routes;
+    }
+
+    class NodeController {
+      public function show(Node $node) {
+        // ...
+        return new Response($content);
+      }
+    }
+  </pre>
+</section>
+
+<section class="slide">
+  <h1>Routing (fancy)</h1>
+
+  <pre class="brush: php">
+    function example_route_info() {
+      $routes['blog_list'] = array(
+        'route' => new Route('/blog/{page}', array(
+          '_controller' => 'BlogController:show',
+          'page' => 1, // Default value
+        ), array(
+          'page' => '\d+',
+          '_method' => 'GET',
+        )),
+        // This gets objectified later...
+        'access' => array(
+          'callback' => array('function' => 'node_access'),
+          'arguments' => array('view'),
+        ),
+      );
+      return $routes;
+    }
+
+    class BlogController {
+      public function show(Request $request, $page) {
+        // Link to router items, not random URLs.
+        $link = $this->generator->generate('node_page', array('node' => 5));
+        // ...
+        return new Response($content);
+      }
+    }
+  </pre>
+
+</section>
+
+<section class="slide">
+  <div class="vcenter">
+    <h2 style="margin-top: 4em;">Now we're talking REST...</h2>
+    <h2 class="incremental" style="margin-top: 4em;">"Pages" are a special case of REST</h2>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>Side-benefits</h1>
+  <ul>
+    <li class="incremental">Cleaner, more modular code</li>
+    <li class="incremental">More object-oriented (more testable, if we do it right)</li>
+    <li class="incremental">Dependency Injection Container(!)</li>
+    <li class="incremental">Lots of knock-on refactoring to clean up old crap</li>
+  </ul>
+  <h3 class="incremental vcenter" style="text-align: center;">(Please help clean up old crap!)</h3>
+</section>
+
+<section class="slide">
+  <h1>And oh yeah, SCOTCH</h1>
+  <ul>
+    <li class="incremental">Blocks and Layout Initiative</li>
+    <li class="incremental">"Panels in Core", without the bad parts</li>
+    <li class="incremental">Talk to Kris Vanderwater (EclipseGc) and Bojhan</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Collaboration</h1>
+  <ul>
+    <li class="incremental">Symfony2: MIT License</li>
+    <li class="incremental">Drupal: GPL License</li>
+    <li class="incremental">Code only flows one way. :-(</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Work upstream</h1>
+  <ul>
+    <li class="incremental">Symfony2 "flash messages": Simple session message persistence</li>
+    <li class="incremental"><code>drupal_set_message()</code></li>
+    <li class="incremental">Make less code in the world!</li>
+    <li class="incremental">Drupalers designed needs for improved API</li>
+    <li class="incremental">Drak (of Zikula CMS) implemented it</li>
+    <li class="incremental">All Symfony2-based projects benefit!</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Next up: Streaming</h1>
+  <ul>
+    <li class="incremental"><a href="http://www.garfieldtech.com/blog/readfile-memory">http://www.garfieldtech.com/blog/readfile-memory</a></li>
+    <li class="incremental"><a href="http://drupal.org/node/1561362">http://drupal.org/node/1561362</a></li>
+    <li class="incremental">Make new file stream response object in Symfony/HttpFoundation</li>
+    <li class="incremental">We get to use it all over</li>
+    <li class="incremental">Everyone else uses it all over</li>
+    <li class="incremental">Make less code in the world!</li>
+    <li class="incremental">Volunteers?</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Excited yet?</h1>
+
+  <h3 class="vcenter incremental" style="text-align: center;">I hope so...</h3>
+</section>
+
+<section class="slide">
+  <div class="vcenter">
+    <h1>Questions?</h1>
+    <h2 style="text-align: center; margin-top: 3em;"><a href="http://groups.drupal.org/wscci">http://groups.drupal.org/wscci</a></h2>
+  </div>
+</section>
+
+
+
+
+  </body>
+</html>
