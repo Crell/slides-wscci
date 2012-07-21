@@ -77,3 +77,9 @@ table.visible {
   table.visible td, table.visible th {
     padding: 3px;
     border: 1px solid #666; }
+
+svg {
+  /*  max-width: 100%;*/ }
+
+blockquote {
+  line-height: 1.5em; }
