@@ -1,4 +1,4 @@
-This is my presentation from Symfony Live Paris 2012
+This is my presentation from Symfony Live San Francisco 2012
 
 Symfony2 Meets Drupal 8
 
