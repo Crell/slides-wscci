@@ -54,6 +54,17 @@ li.axis-important {
 
 h2 {
   text-align: center;
+  line-height: 2em;
+}
+
+h3 {
+  line-height: 2em;
+}
+
+em {
+  font-weight: normal;
+  font-style: italic;
+  color: Blue;
 }
 
 /*
@@ -67,6 +78,7 @@ section.slide {
 blockquote {
   vertical-align: center;
   text-align: center;
+  line-height: 1.3em;
   font-size: 40px;
   quotes: '"' '"';
 
@@ -107,3 +119,4 @@ p {
   margin-top: 1em;
   font-size: 1.2em;
 }
+

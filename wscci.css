@@ -45,7 +45,16 @@ li.axis-important {
   color: Green; }
 
 h2 {
-  text-align: center; }
+  text-align: center;
+  line-height: 2em; }
+
+h3 {
+  line-height: 2em; }
+
+em {
+  font-weight: normal;
+  font-style: italic;
+  color: Blue; }
 
 /*
 section.slide {
@@ -57,6 +66,7 @@ section.slide {
 blockquote {
   vertical-align: center;
   text-align: center;
+  line-height: 1.3em;
   font-size: 40px;
   quotes: '"' '"'; }
   blockquote:before {

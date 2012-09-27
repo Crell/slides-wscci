@@ -28,13 +28,13 @@
     <script type="text/javascript" src="src/highlighter/shBrushJScript.js"></script>
 
     <!-- Syntax highlighting core CSS and a theme -->
-    <link type="text/css" rel="stylesheet" href="highlighter/shCore.css"/>
-    <link type="text/css" rel="stylesheet" href="highlighter/shThemeEclipse.css"/>
+    <link type="text/css" rel="stylesheet" href="src/highlighter/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="src/highlighter/shThemeEclipse.css"/>
 
     <script type="text/javascript">
       $(function() {
           $(".slide").slippy({
-            //animLen: 0,
+            animLen: 0,
             margin: 0.05
           });
           SyntaxHighlighter.all();
@@ -62,20 +62,11 @@
     <li>Drupal Association Advisor</li>
     <li>Web Services & Context Initiative Owner</li>
     <li>Co-Author,<br /><em>Drupal 7 Module Development</em>,<br />Packt Publishing</li>
-    <li>Architectural Gadfly</li>
+    <li>Architectural Pedant</li>
     <li>Nerf Gunslinger</li>
   </ul>
 
   <img style="margin-top: 2em;" src="images/palantir.png" />
-</section>
-
-<section class="slide">
-  <h1>What we do</h1>
-  <img style="position: absolute; top: 30px; left: -60px;" src="images/sites/barnard-1.jpg" />
-  <img style="position: absolute; top: 60px; left: -40px;" class="incremental" src="images/sites/foreign-affairs-1.jpg" />
-  <img style="position: absolute; top: 90px; left: -20px;" class="incremental" src="images/sites/fieldmuseum-1.jpg" />
-  <img style="position: absolute; top: 120px; left: 0px;" class="incremental" src="images/sites/opensource-1.jpg" />
-  <img style="position: absolute; top: 150px; left: 20px;" class="incremental" src="images/sites/marketplace-1.jpg" />
 </section>
 
 <section class="slide" style="text-align:center">
@@ -84,62 +75,67 @@
   </div>
 </section>
 
+<section class="slide" style="text-align:center" data-background="images/drupalsites.png">
+  <h1>2% of the Web runs Drupal</h1>
+</section>
+
+<section class="slide" style="text-align:center" data-background="images/periodic-modules.png">
+</section>
+
+<section class="slide" data-background="images/drupalcon-denver.jpg">
+</section>
+
 <section class="slide" style="text-align:center">
+  <h1>Over 1000 Drupal 7 Contributors</h1>
+  <div class="vcenter">
+    <img src="images/d7-contributor-cloud-small.png" alt="Drupal 7 contributor tag cloud" />
+  </div>
+</section>
+
+<section class="slide" style="text-align:center">
+  <h1>Over 20,000 new Drupal 7 sites every month</h1>
+  <div class="vcenter">
+    <img src="images/drupal7-usage-stats.png" alt="Drupal 7 usage stats" />
+  </div>
+</section>
+
+<section class="slide" style="text-align:center">
+  <h1>Conclusion...</h1>
   <div class="vcenter">
     <h2>Drupal is awesome!</h2>
   </div>
 </section>
 
-<section class="slide" style="text-align:center">
-  <div class="vcenter">
-    <h2>No REALLY!</h2>
-    <h2>Drupal is awesome!</h2>
-  </div>
+<section class="slide" data-background="images/drupal8-kick-ass.jpg">
+  <h1 style="position: relative; top: 12em; left: 10em;">Time to kick some ass<br />in Drupal 8</h1>
 </section>
 
 <section class="slide" style="text-align:center">
   <div class="vcenter">
-    <h2>Drupal is awesome if you are an end user!</h2>
-
-    <h2>Powerful admin interface</h2>
+    <h1>One small problem...</h1>
   </div>
+</section>
+
+<section class="slide" data-background="images/dries-college.jpg">
+</section>
+
+<section class="slide" style="text-align:center">
+  <h2 class="vcenter">
+    Drupal is an <em>11 year old</em>, <em>PHP 4-based</em> extensible <em>Slashdot clone</em> originally
+    written by a Belgian <em>college kid</em>.
+  </h2>
 </section>
 
 <section class="slide" style="text-align:center">
   <div class="vcenter">
-    <h2>Drupal is awesome if you are a sales guy!</h2>
-    <h2>Well known brand</h2>
+    <img src="images/drupal-to-desktop.png" alt="Drupal was build for a desktop world" />
   </div>
 </section>
 
-<section class="slide" style="text-align:center">
-  <div class="vcenter">
-    <h2>Drupal sucks if you are a developer!</h2>
-    <h2 class="incremental" style="color: red; position: relative; top: -1.25em;"><del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</del></h2>
-    <h2 class="incremental">Drupal sucks if you want a framework.</h2>
-  </div>
+<section class="slide" data-background="images/mobile-planet.png">
 </section>
 
-<section class="slide" style="text-align:center">
-  <div class="vcenter">
-    <h2>Drupal is CMS 1st, development framework 2nd</h2>
-
-    <h2>That is a natural result of Drupal's history</h2>
-    <br />
-    <h2 class="incremental">Drupal has evolved into a CMS/framework hybrid:<br />A "framlication"</h2>
-  </div>
-</section>
-
-<section class="slide">
-  <h2>Undesirable results of that legacy..</h2>
-  <ul>
-    <li>.. no clean separation of configuration, logic and content<br /><em class="incremental">That's how you get so much flexibility</em></li>
-    <li>.. no clean deployment and staging concept<br /><em class="incremental">A natural result of the first point</em></li>
-    <li>.. inconsistent cache layers<br /><em class="incremental">Result of highly dynamic environment</em></li>
-    <li>.. function callback AOP is not everyone's cup of tea<br /><em class="incremental">Very simple and powerful, though, and works in PHP 4</em></li>
-    <li>.. lots of legacy baggage<br /><em class="incremental">That's what happens when you're 11 years old. :-)</em></li>
-    <li>.. NIH (not invented here) syndrome<br /><em class="incremental">As every PHP project had until ~2010</em></li>
-  </ul>
+<section class="slide" data-background="images/drupal-connected.png">
 </section>
 
 <section class="slide" style="text-align:center">
@@ -154,17 +150,10 @@
 </section>
 
 <section class="slide">
-  <h1>The original plan...</h1>
-  <blockquote class="vcenter">The Web Services and Context Core Initiative (WSCCI) aims to
-    transform Drupal from a first-class CMS to a first-class REST server with a
-    first-class CMS on top of it. To do that, we must give Drupal a unified,
-    powerful context system that will support smarter, context- sensitive,
-    easily cacheable block-centric layouts and non-page responses using a
-    robust unified plugin mechanism.</blockquote>
-</section>
-
-<section class="slide">
-  <h1 class="vcenter">Huh?</h1>
+  <h1>The mission...</h1>
+  <blockquote class="vcenter">Drupal needs to evolve, and quickly, from a
+    first-class web CMS into a first-class REST server that includes a
+    first-class web CMS.</blockquote>
 </section>
 
 <section class="slide">
@@ -177,30 +166,13 @@
   <div style="text-align: center;"><img src="images/blocks-drupal-8.svg" alt="Blocks in Drupal 8" /></div>
 </section>
 
-<section class="slide" style="text-align: center;">
-  <h1>Drupal 7 page flow</h1>
-  <div class="vcenter">
-    <img src="images/request-flow-drupal-7.svg"  alt="Page request flow in Drupal 7" />
-  </div>
-</section>
-
-<section class="slide" style="text-align: center;">
-  <h1 class="vcenter">"As long as we're fixing that we may as well bake REST support in."</h1>
-</section>
-
-<section class="slide" style="text-align: center;">
-  <div class="vcenter">
-    <img src="images/drufony.png" alt="Symfony + Drupal" />
-  </div>
-</section>
-
 <section class="slide">
   <h1>Why Symfony?</h1>
   <ul>
     <li class="incremental">Just wanted a request/response library</li>
     <li class="incremental">
       Symfony2 vs. Zend: Symfony2
-      <figure class="incremental">
+      <figure class="incremental" style="text-align: center;">
         <img src="images/headshot-lukas.jpg" alt="Lukas Smith" />
         <figcaption>It's all his fault</figcaption>
       </figure>
@@ -208,36 +180,12 @@
     <li class="incremental">Continue implementing</li>
     <li class="incremental">
       Oh, wait, you did this already...
-      <figure class="incremental">
+      <figure class="incremental" style="text-align: center;">
         <img src="images/headshot-stof.jpg" alt="Christof Coevoet" />
         <figcaption>It's all his fault</figcaption>
       </figure>
     </li>
   </ul>
-</section>
-
-<section class="slide" style="text-align: center;">
-  <h1>Drupal 7</h1>
-  <div class="vcenter">
-    <img src="images/stack-drupal7.svg" alt="Drupal 7 block diagram" />
-    <h2>Not very well separated</h2>
-  </div>
-</section>
-
-<section class="slide" style="text-align: center;">
-  <h1>Symfony2</h1>
-  <div class="vcenter">
-    <img src="images/stack-symfony.svg" alt="Symfony block diagram" />
-    <h2>Very separated</h2>
-  </div>
-</section>
-
-<section class="slide" style="text-align: center;">
-  <h1>Symfony2 Applications</h1>
-  <div class="vcenter">
-    <img src="images/stack-silex.svg" alt="Silex block diagram" />
-    <h2>One approach...</h2>
-  </div>
 </section>
 
 <section class="slide" style="text-align: center;">
@@ -249,16 +197,27 @@
 </section>
 
 <section class="slide">
-  <h1>So what are we using?</h1>
-  <img src="images/symfony2-components.png" style="height: 80%" />
-  <h2 style="margin-top: 1em;">So far...</h2>
-</section>
-
-<section class="slide">
   <div class="vcenter">
     <img src="images/under-construction.png" alt="This is all a work in progress..." />
   </div>
 </section>
+
+<section class="slide" style="text-align: center;">
+  <div class="vcenter">
+    <img src="images/drufony.png" alt="Symfony + Drupal" />
+  </div>
+</section>
+
+<section class="slide">
+  <div class="vcenter">
+    <blockquote>Drupal needs to evolve, and quickly, from a
+      first-class web CMS into a first-class REST server that includes a
+      first-class web CMS.</blockquote>
+
+    <blockquote class="incremental" style="margin-top: 2em;">Hey, look, a first-class REST server!</blockquote>
+  </div>
+</section>
+
 
 <section class="slide">
   <h1>The kernel</h1>
@@ -275,26 +234,69 @@
 </section>
 
 <section class="slide">
-  <h1>Routing</h1>
-  <ul>
-    <li class="incremental">For now, just wrapping our old route lookup logic</li>
-    <li class="incremental">A typical Drupal site has ~1000 routes. (That's what happens when you have a powerful UI.)</li>
-    <li class="incremental">New Matcher/MatcherDumper/Generator in progress
-      <ul>
-        <li class="incremental">Database-backed</li>
-        <li class="incremental">Retain fit-based path matching</li>
-        <li class="incremental">Extend with mimetype-based routing</li>
-        <li class="incremental">Tentative work on a new <a href="https://github.com/winmillwill/BadFaith">stand-alone negotiation library</a></li>
-      </ul>
-    </li>
-  </ul>
+  <h1>Drupal 7 - index.php</h1>
+  <div class="vcenter">
+    <pre class="brush:php">
+/**
+ * @file
+ * The PHP page that serves all requests on a Drupal installation.
+ */
+
+/**
+ * Root directory of Drupal installation.
+ */
+define('DRUPAL_ROOT', getcwd());
+
+require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
+drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+menu_execute_active_handler();
+    </pre>
+  </div>
 </section>
 
-<section class="slide" style="text-align: center;">
+<section class="slide">
+  <h1>Drupal 8 - index.php</h1>
   <div class="vcenter">
-    <h1>I'd show a diagram here, but you've seen it already.</h1>
-    <h1 class="incremental" style="margin-top: 2em;">That's the whole point :-)</h1>
+    <pre class="brush:php">
+
+use Drupal\Core\DrupalKernel;
+use Symfony\Component\HttpFoundation\Request;
+
+define('DRUPAL_ROOT', getcwd());
+
+// Bootstrap all of Drupal's legacy subsystems.
+// @see Drupal\Core\EventSubscriber\PathSubscriber;
+// @see Drupal\Core\EventSubscriber\LegacyRequestSubscriber;
+require_once DRUPAL_ROOT . '/core/includes/bootstrap.inc';
+drupal_bootstrap(DRUPAL_BOOTSTRAP_CODE);
+
+// @todo Figure out how best to handle the Kernel constructor parameters.
+$kernel = new DrupalKernel('prod', FALSE);
+
+$request = Request::createFromGlobals();
+$response = $kernel->handle($request)->prepare($request)->send();
+
+$kernel->terminate($request, $response);
+    </pre>
   </div>
+</section>
+
+<section class="slide">
+  <h1>Routing</h1>
+  <ul>
+    <li class="incremental">A typical Drupal site has ~1000 routes. (That's what happens when you have a powerful UI.)</li>
+    <li class="incremental">New NestedMatcher implementation nearly complete
+      <ul>
+          <li class="incremental">Database-backed, fit-basd algorithm</li>
+          <li class="incremental">Multi-stage matcher, filter-based</li>
+          <li class="incremental">Configurable via DIC</li>
+          <li class="incremental">Will support mimetype-based matching</li>
+          <li class="incremental">Tentative work on a new <a href="https://github.com/winmillwill/BadFaith">stand-alone negotiation library</a></li>
+          <li class="incremental">(Likely future extension only; needs help.)</li>
+      </ul>
+    </li>
+    <li class="incremental">Will be pushed upstream to Symfony CMF Routing.</li>
+  </ul>
 </section>
 
 <section class="slide">
@@ -337,7 +339,7 @@
   </div>
 </section>
 
-<section class="slide" data-background="hooks.jpg">
+<section class="slide" data-background="images/hooks.jpg">
   <h1 class="center" style="color: White; font-size: 3em; font-weight: Bolder;">Hooks</h1>
 </section>
 
@@ -386,6 +388,7 @@
   <ul>
     <li class="incremental">Drupal 8 will have both EventDispatcher and Hooks</li>
     <li class="incremental">EventDispatcher closer to the core, Hooks further out</li>
+    <li class="incremental">Refactor hook engine to not be completely global, for testing</li>
     <li class="incremental">Drupal 9: Just EventDispatcher? We'll see...</li>
   </ul>
 </section>
@@ -447,81 +450,39 @@
   <p class="incremental">We could use a hand!</p>
 </section>
 
-
-
 <section class="slide">
-  <h1>Also under consideration...</h1>
+  <h1>Replacing NIH with PIE</h1>
   <ul>
-    <li class="incremental">YAML (Oh wait, that went in already)</li>
-    <li class="incremental">Composer</li>
-    <li class="incremental">ChainRouter (Symfony CMF)</li>
-    <li class="incremental">Even some non-Symfony libraries</li>
-    <li class="incremental" style="margin-top: 2em;">... Potentially others</li>
+    <li class="incremental"><em>Proudly Invented Elsewhere</em></li>
+    <li class="incremental">YAML Component</li>
+    <li class="incremental">Doctrine Common annotations</li>
+    <li class="incremental">Composer (partially)</li>
+  </ul>
+  <p class="incremental">Considering...</p>
+  <ul>
+    <li class="incremental">Assetic</li>
+    <li class="incremental">Guzzle</li>
+    <li class="incremental">Imagine</li>
   </ul>
 </section>
 
-
-<section class="slide" style="text-align: center;">
-  <h1>Google image search for "Symfony Newbie"</h1>
-  <div class="incremental">
-    <img src="images/boston-sprint.jpg" alt="Boston WSCCI Sprint" />
-    <img src="images/symfony-noob.png" alt="Symfony noob" style="position: relative; top: -100px; left: 200px;" />
-  </div>
+<section class="slide">
+  <h1>Clean up all the things!</h1>
+  <ul>
+    <li class="incremental">PSR-0</li>
+    <li class="incremental">Gettext</li>
+    <li class="incremental">PhpStorage</li>
+    <li class="incremental">Archiver</li>
+    <li class="incremental">Graph</li>
+    <li class="incremental">Plugin</li>
+    <li class="incremental">Reflection</li>
+    <li class="incremental">And more...</li>
+  </ul>
 </section>
 
-<section class="slide" data-background="drupalcon-denver.jpg">
-</section>
-
 <section class="slide" style="text-align: center;">
-  <h1>We need help</h1>
+  <h1>Let's work together</h1>
   <img style="width: 90%" src="images/kitten-mindmeld.jpg" alt="We need help" data-credit="http://nagamakironin.blogspot.fr/2010/09/dennis-markuze-you-need-help.html" />
-</section>
-
-<section class="slide" style="text-align: center;">
-  <h1>Contact people</h1>
-  <table class="visible team-table" style="height: 100%;">
-    <tr>
-      <td><img src="images/headshot-larry.jpg" alt="Larry Garfield" /></td>
-      <td>Larry "Crell" Garfield</td>
-      <td>Kernel, Routing, Web services</td>
-    </tr>
-    <tr class="incremental">
-      <td><img src="images/headshot-kris.jpg" alt="Kris Vanderwater" /></td>
-      <td>Kris "EclipseGc" Vanderwater</td>
-      <td>ESI-based page layout</td>
-    </tr>
-    <tr class="incremental">
-      <td><img src="images/headshot-rob.jpg" alt="Rob Loach" /></td>
-      <td>Rob Loach</td>
-      <td>Dependency Injection</td>
-    </tr>
-    <tr class="incremental">
-      <td><img src="images/headshot-jen.png" alt="Jen Lampton" /></td>
-      <td>Jen Lampton</td>
-      <td>Twig</td>
-    </tr>
-    <tr class="incremental">
-      <td><img src="images/headshot-greg.jpg" alt="Greg Dunlap" /></td>
-      <td>Greg "heyrocker" Dunlap</td>
-      <td>YAML, Configuration</td>
-    </tr>
-    <!--
-    <tr class="incremental">
-      <td><img src="images/headshot-angie.jpg" alt="Angie Byron" /></td>
-      <td>Angie "webchick" Byron</td>
-      <td>General Drupal everything</td>
-    </tr> -->
-  </table>
-</section>
-
-<section class="slide">
-  <h1>Where to find us</h1>
-  <ul>
-    <li><a href="http://drupal.org/project/issues/search/drupal?issue_tags=symfony">Drupal.org issue queue</a>, look for the "symfony" tag</li>
-    <li><a href="irc://freenode/#drupal-contribute">#drupal-contribute IRC</a></li>
-    <li><a href="irc://freenode/#drupal-wscci">#drupal-wscci IRC</a> (my initiative channel)</li>
-    <li>Also look for Drupalers in #symfony-dev...</li>
-  </ul>
 </section>
 
 <section class="slide">
@@ -531,6 +492,10 @@
     <li class="incremental">Drupal: GPL License</li>
     <li class="incremental">Code only flows one way. :-(</li>
     <li class="incremental">Work can begin anywhere :-)</li>
+  </ul>
+  <p class="incremental">Coordination</p>
+  <ul>
+    <li class="incremental"><a href="http://groups.drupal.org/node/250578">Security releases</a></li>
   </ul>
 </section>
 
@@ -563,22 +528,127 @@
     <li class="incremental">Make less code in the world!</li>
   </ul>
 </section>
+
 <section class="slide">
   <h1>Odds and ends</h1>
   <ul>
     <li class="incremental"><a href="https://github.com/symfony/symfony/pull/3954"><code>Response::prepare()</code> chaining</a></li>
     <li class="incremental"><a href="https://github.com/symfony/symfony/pull/4017">Improve FlattenException</a></li>
-    <li class="incremental"><a href="https://github.com/symfony/symfony/pull/4510">UTF-8 encoding weirdness in JSON</a> (still open)</li>
+    <li class="incremental"><a href="https://github.com/symfony/symfony/pull/4510">UTF-8 encoding weirdness in JSON</a></li>
     <li class="incremental"><a href="https://github.com/symfony/symfony/pull/4363">Allow Router matching on a full Request</a> (still open)</li>
+    <li class="incremental"><a href="https://github.com/symfony/symfony/pull/4642">Make RouteCollection Countable</a></li>
+    <li class="incremental"><a href="https://github.com/symfony/symfony/pull/4755">Improve Route serialization</a></li>
+    <li class="incremental"><a href="https://github.com/symfony/symfony/pull/5381">Add lockExists to Store interface</a></li>
 
     <li class="incremental" style="margin-top: 2em;">Expect more...</li>
   </ul>
 </section>
 
 <section class="slide">
-  <h1>Excited yet?</h1>
+  <h1>Why use Drupal, not pure Symfony?</h1>
+  <div class="vcenter">
+    <h1 class="incremental">Drupal is not a Framework</h1>
 
-  <h3 class="vcenter incremental" style="text-align: center;">I hope so, because we are...</h3>
+    <h1 class="incremental" style="margin-top: 3em;"><a href="">Drupal is not a CMS</a></h1>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>What is Drupal?</h1>
+  <div class="vcenter">
+    <div style="width: 50%; float: right; ">
+      <img style="max-width: 100%; height: auto;" src="images/lego-druplicon.jpg" />
+    </div>
+
+    <h1 style="line-height: 2em;">Drupal is a <em>platform</em> that allows you to assemble your own CMS (or other application).</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <h1>Why Drupal and Symfony?</h1>
+
+  <div class="vcenter">
+    <h2 class="incremental"><em>We like Symfony2</em>, because it's a set of tools that allows you to assemble your own framework.</h2>
+
+    <h2 class="incremental" style="margin-top: 3em;"><em>You will like Drupal 8</em> because it's a platform that allows you to assemble your own web application.</h2>
+  </div>
+</section>
+
+<section class="slide" data-background="images/fields-background.jpg">
+  <h1 style="color: White; text-align: left;">Entities/Fields</h1>
+  <h2 style="color: White; text-align: left;">Click together your own data structure</h2>
+
+  <img src="images/fields-ui.png" alt="Fields UI" style="margin-left: 100px;" />
+</section>
+
+<section class="slide" data-background="images/space-background.jpg">
+  <h1 style="color: White; text-align: left;">Views</h1>
+  <h2 style="color: White; text-align: left;">Click together your own lists and queries</h2>
+
+  <img src="images/views-ui.png" alt="Views UI" style="margin-left: 100px;" />
+</section>
+
+<section class="slide" data-background="images/rules-background.png">
+  <div style="background: Black; padding: 5px;">
+    <h1 style="color: White; text-align: left;">Rules</h1>
+    <h2 style="color: White; text-align: left;">Click together your own business logic</h2>
+  </div>
+  <img src="images/rules-ui.png" alt="Rules UI" style="margin-left: 100px;" />
+</section>
+
+<section class="slide" data-background="images/space-background.jpg">
+  <h1 style="color: White; text-align: left;">Drupal</h1>
+  <h2 style="color: White; text-align: left;">Click together your own site</h2>
+
+  <img src="images/views-slideshow.png" alt="A slideshow built with Views" style="position: relative; left: -100px" />
+  <img src="images/views-form.png" alt="A form built with Views" style="position: relative; top: -200px; left: 100px;" />
+</section>
+
+<section class="slide">
+  <h1>Distributions: Drupal applications in-a-box</h1>
+  <h2><a href="http://www.drupal.org/project/distributions">http://www.drupal.org/project/distributions</a></h2>
+
+  <div style="position: relative; width: 100%">
+    <img src="images/banner-openatrium.png" alt="Open Atrium" style="position: absolute; top: 50px; left: -100px;" />
+    <img src="images/banner-commerce.png" alt="Drupal Commerce" style="position: absolute; top: 50px; left: 250px;" />
+    <img src="images/banner-openpublish.png" alt="Drupal Commerce" style="position: absolute; top: 200px; left: -100px;" />
+    <img src="images/banner-commons.png" alt="Drupal Commons" style="position: absolute; top: 200px; left: 250px;" />
+    <br style="clear: both" />
+  </div>
+</section>
+
+<section class="slide">
+  <h1>But wait, there's more!</h1>
+  <ul>
+    <li class="incremental">Configuration management: Finally, reasonable deployment</li>
+    <li class="incremental">Mobile-friendly administration: Post from your phone</li>
+    <li class="incremental">Improved multi-lingual support</li>
+    <li class="incremental">HTML5 Everywhere</li>
+    <li class="incremental">Responsive Mobile-First themes</li>
+    <li class="incremental">Revamped Entity system</li>
+    <li class="incremental">Block-driven, ESI-friendly layout</li>
+    <li class="incremental">Over 1500 issues closed since Drupal 7 launched and counting...</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Do you want Drupal 8?</h1>
+
+  <h2 class="vcenter" style="text-align: center;">git clone --branch 8.x<br/>http://git.drupal.org/project/drupal.git</h2>
+</section>
+
+<section class="slide">
+  <h1>Do you want <em>help</em> Drupal 8?</h1>
+
+  <div class="vcenter" style="text-align: center;">
+    <img src="images/drupal-needs-you.jpg" alt="Drupal Needs You!" />
+
+    <p><a href="irc://chat.freenode.net/#drupal-contribute">#drupal-contribute</a></p>
+
+    <h3>Feature freeze - 1st Dec 2012<br />
+      Code freeze - 1st April 2013<br />
+      Release ≈ August 2013</h3>
+  </div>
 </section>
 
 <section class="slide" style="text-align: center;">
