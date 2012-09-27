@@ -196,10 +196,8 @@
   </div>
 </section>
 
-<section class="slide">
-  <div class="vcenter">
-    <img src="images/under-construction.png" alt="This is all a work in progress..." />
-  </div>
+<section class="slide" data-background="images/under-construction.png">
+
 </section>
 
 <section class="slide" style="text-align: center;">
@@ -227,6 +225,7 @@
     <li class="incremental">Steer as close to existing components as possible</li>
     <li class="incremental">Borrow some of the full-stack extensions
       <ul>
+        <li class="incremental">Extended HttpKernel (forward(), render(), etc.)</li>
         <li class="incremental">Auto-loading of controller arguments</li>
       </ul>
     </li>
@@ -427,7 +426,7 @@ $kernel->terminate($request, $response);
 <section class="slide" style="text-align: center;">
   <h1>DrupalCon Denver - March 2012</h1>
   <div class="vcenter">
-    <blockquote>We must get rid of these Arrays of Doom.</blockquote>
+    <blockquote>We must get rid of these<br />Arrays of Doom.</blockquote>
     <h2 style="margin-top: 1em;">--Karoly Negyesi</h2>
   </div>
 </section>
@@ -480,9 +479,9 @@ $kernel->terminate($request, $response);
   </ul>
 </section>
 
-<section class="slide" style="text-align: center;">
-  <h1>Let's work together</h1>
-  <img style="width: 90%" src="images/kitten-mindmeld.jpg" alt="We need help" data-credit="http://nagamakironin.blogspot.fr/2010/09/dennis-markuze-you-need-help.html" />
+<section class="slide" style="text-align: center;" data-background="images/kitten-mindmeld.jpg">
+  <h1 style="color: White;">Let's work together</h1>
+<!--  <img style="width: 90%" src="images/kitten-mindmeld.jpg" alt="We need help" data-credit="http://nagamakironin.blogspot.fr/2010/09/dennis-markuze-you-need-help.html" />-->
 </section>
 
 <section class="slide">
@@ -581,13 +580,6 @@ $kernel->terminate($request, $response);
   <img src="images/fields-ui.png" alt="Fields UI" style="margin-left: 100px;" />
 </section>
 
-<section class="slide" data-background="images/space-background.jpg">
-  <h1 style="color: White; text-align: left;">Views</h1>
-  <h2 style="color: White; text-align: left;">Click together your own lists and queries</h2>
-
-  <img src="images/views-ui.png" alt="Views UI" style="margin-left: 100px;" />
-</section>
-
 <section class="slide" data-background="images/rules-background.png">
   <div style="background: Black; padding: 5px;">
     <h1 style="color: White; text-align: left;">Rules</h1>
@@ -597,11 +589,18 @@ $kernel->terminate($request, $response);
 </section>
 
 <section class="slide" data-background="images/space-background.jpg">
+  <h1 style="color: White; text-align: left;">Views</h1>
+  <h2 style="color: White; text-align: left;">Click together your own lists and queries</h2>
+
+  <img src="images/views-ui.png" alt="Views UI" style="margin-left: 100px;" />
+</section>
+
+<section class="slide" data-background="images/space-background.jpg">
   <h1 style="color: White; text-align: left;">Drupal</h1>
   <h2 style="color: White; text-align: left;">Click together your own site</h2>
 
   <img src="images/views-slideshow.png" alt="A slideshow built with Views" style="position: relative; left: -100px" />
-  <img src="images/views-form.png" alt="A form built with Views" style="position: relative; top: -200px; left: 100px;" />
+  <img src="images/views-form.png" alt="A form built with Views" style="position: relative; top: -300px; left: 100px;" />
 </section>
 
 <section class="slide">
@@ -609,10 +608,10 @@ $kernel->terminate($request, $response);
   <h2><a href="http://www.drupal.org/project/distributions">http://www.drupal.org/project/distributions</a></h2>
 
   <div style="position: relative; width: 100%">
-    <img src="images/banner-openatrium.png" alt="Open Atrium" style="position: absolute; top: 50px; left: -100px;" />
-    <img src="images/banner-commerce.png" alt="Drupal Commerce" style="position: absolute; top: 50px; left: 250px;" />
-    <img src="images/banner-openpublish.png" alt="Drupal Commerce" style="position: absolute; top: 200px; left: -100px;" />
-    <img src="images/banner-commons.png" alt="Drupal Commons" style="position: absolute; top: 200px; left: 250px;" />
+    <img src="images/banner-openatrium.png" alt="Open Atrium" style="position: absolute; top: 50px; left: -50px;" />
+    <img src="images/banner-commerce.png" alt="Drupal Commerce" style="position: absolute; top: 170px; left: 350px;" />
+    <img src="images/banner-openpublish.png" alt="Drupal Commerce" style="position: absolute; top: 300px; left: -50px;" />
+    <img src="images/banner-commons.png" alt="Drupal Commons" style="position: absolute; top: 400px; left: 350px;" />
     <br style="clear: both" />
   </div>
 </section>
@@ -634,7 +633,7 @@ $kernel->terminate($request, $response);
 <section class="slide">
   <h1>Do you want Drupal 8?</h1>
 
-  <h2 class="vcenter" style="text-align: center;">git clone --branch 8.x<br/>http://git.drupal.org/project/drupal.git</h2>
+  <h2 class="vcenter" style="text-align: center;">git clone --recursive --branch 8.x<br/>http://git.drupal.org/project/drupal.git</h2>
 </section>
 
 <section class="slide">
@@ -643,9 +642,11 @@ $kernel->terminate($request, $response);
   <div class="vcenter" style="text-align: center;">
     <img src="images/drupal-needs-you.jpg" alt="Drupal Needs You!" />
 
-    <p><a href="irc://chat.freenode.net/#drupal-contribute">#drupal-contribute</a></p>
+    <h3></h3>
 
-    <h3>Feature freeze - 1st Dec 2012<br />
+    <h3>
+      <a href="irc://chat.freenode.net/#drupal-contribute">#drupal-contribute</a><br />
+      Feature freeze - 1st Dec 2012<br />
       Code freeze - 1st April 2013<br />
       Release ≈ August 2013</h3>
   </div>
@@ -660,7 +661,9 @@ $kernel->terminate($request, $response);
 
 <section class="slide" style="text-align: center;">
   <div class="vcenter">
-    <img src="images/drupalcon-munich.png" alt="DrupalCon Munich" />
+    <a href="http://badcamp.net/"><img src="images/badcamp-2012.png" alt="Bay Area Drupal Camp (BADCamp)" /></a>
+
+    <h1 class="incremental" style="margin-top: 2em;"><em>It's free!</em></h1>
   </div>
 </section>
 
@@ -671,7 +674,7 @@ $kernel->terminate($request, $response);
 
     <div style="font-size: 1.2em; margin-top: 2em;">
       <div>Be nice to me on Joind.in!</div>
-      <div><a href="https://joind.in/talk/view/6600">https://joind.in/talk/view/6600</a></div>
+      <div><a href="https://joind.in/talk/view/7211">https://joind.in/talk/view/7211</a></div>
 
       <div style="margin-top: 2em;">Stalk me on Twitter!</div>
       <div><a href="http://twitter.com/Crell">@Crell</a></div>
